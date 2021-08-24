@@ -5,7 +5,6 @@ Notes and homework files from [a course on computational physics](http://www-per
 Members:
 - Alejandra
 - Diego
-- Camilo
 - Aarón
 - Abel
 - Joaquín
