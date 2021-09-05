@@ -8,3 +8,5 @@ Members:
 - Aarón
 - Abel
 - Joaquín
+- Alonso
+- Adriana
