@@ -14,15 +14,16 @@ def main():
     # PART B
     fourier = np.empty_like(data)
     dim = 1024
-    num_blocks = int(dim/16)
+    dim_blocks = 16
+    num_blocks = int(dim/dim_blocks)
 
     for i in range(num_blocks):
         for j in range(num_blocks):
-            fourier[16*i:16*i+16, 16*j:16*j+16] = dcst.dct2(data[16*i:16*i+16, 16*j:16*j+16])
+            fourier[dim_blocks*i : dim_blocks*i + dim_blocks, dim_blocks*j : dim_blocks*j + dim_blocks] = dcst.dct2(data[dim_blocks*i : dim_blocks*i + dim_blocks, dim_blocks*j : dim_blocks*j + dim_blocks])
 
     # PART C, D
     count = 0
-    threshold = 10000 # 10, 20, 50, 100, etc.
+    threshold = 100000 # 10, 20, 50, 100, etc.
 
     for i in range(dim):
         for j in range(dim):
@@ -37,7 +38,7 @@ def main():
 
     for i in range(num_blocks):
         for j in range(num_blocks):
-            inv_data[16*i:16*i+16, 16*j:16*j+16] = dcst.idct2(fourier[16*i:16*i+16, 16*j:16*j+16])
+            inv_data[dim_blocks*i : dim_blocks*i + dim_blocks, dim_blocks*j : dim_blocks*j + dim_blocks] = dcst.idct2(fourier[dim_blocks*i : dim_blocks*i + dim_blocks, dim_blocks*j : dim_blocks*j + dim_blocks])
 
     # PART F
     pl.imshow(inv_data)

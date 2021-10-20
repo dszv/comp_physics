@@ -15,7 +15,7 @@ def main():
     at = np.fft.rfft(trumpet)
     
     # plot
-    plt.plot(np.absolute(at)) # ap
+    plt.plot(np.absolute(ap)) # ap, at
 
     # aesthetics
     plt.title('Fourier coefficients')
