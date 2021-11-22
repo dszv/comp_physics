@@ -10,7 +10,7 @@ m = 1.0
 g = 9.81
 X0 = [np.pi/2, 0, np.pi/2, 0]
 t0 = 0
-tf = 10
+tf = 100
 h = 0.001
 
 
@@ -24,7 +24,7 @@ def f(t, X):
 
 
 def main():
-    X = solve_ivp(f, [t0, tf], X0, method='RK45',
+    X = solve_ivp(f, [t0, tf], X0, method='DOP853',
                   t_eval=np.arange(t0, tf + h, h))
 
     # PART B
